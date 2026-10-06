@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive offers and packages at Restoreland Hotel – weekend deals, honeymoon packages, seasonal discounts, and more.">
+    <title>Annet`s Restoreland Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <title>Floating WA Message</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="style.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <div id="myButton"></div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+    <span> +254 708728542</span>
+    <span> offers@restoreland.com</span>
+    <span> Nairobi, Kenya</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+   <div class="logo">
+    <div class="logo-text">
+        <h1>Restoreland</h1>
+        <span class="tagline">Luxury • Comfort • Peace</span>
+    </div>
+</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="dining.html">Dining</a>
+        <a href="offers.html" class="active">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-book" onclick="bookNow()">Book Now</button>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" style="background-image:url('images/offers-hero.jpg')">
+    <div class="page-hero-content">
+        <h1>Special Offers</h1>
+        <p>Home <span>›</span> Offers</p>
+    </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="welcome">
+    <h2>Unmissable Deals Await</h2>
+    <p>From romantic getaways to business escapes, discover exclusive packages designed to make your stay unforgettable — at prices you'll love.</p>
+</section>
+
+<!-- ===== FEATURED OFFER (COUNTDOWN) ===== -->
+<section class="featured-offer">
+    <div class="featured-grid">
+        <div class="featured-image">
+            <img src="images/featured-offer.jpg" alt="Featured Offer">
+            <span class="badge"> Limited Time</span>
+        </div>
+        <div class="featured-text">
+            <h2>Save 30% This Season</h2>
+            <p>Book any Deluxe Room or Suite for stays before the end of the month and enjoy <strong>30% off</strong> plus complimentary breakfast for two.</p>
+
+            <div class="countdown" id="countdown">
+                <div class="count-box">
+                    <span id="days">00</span>
+                    <small>Days</small>
+                </div>
+                <div class="count-box">
+                    <span id="hours">00</span>
+                    <small>Hours</small>
+                </div>
+                <div class="count-box">
+                    <span id="minutes">00</span>
+                    <small>Minutes</small>
+                </div>
+                <div class="count-box">
+                    <span id="seconds">00</span>
+                    <small>Seconds</small>
+                </div>
+            </div>
+
+            <button class="btn-primary" onclick="bookNow()">Claim This Offer</button>
+            <p class="promo-code">Use code: <strong>RESTORE30</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== FILTER TABS ===== -->
+<section class="offers-section">
+    <h2>Browse All Offers</h2>
+    <p class="section-sub">Filter by category to find your perfect deal</p>
+
+    <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterOffers('all', this)">All Offers</button>
+        <button class="filter-btn" onclick="filterOffers('romance', this)">Romance</button>
+        <button class="filter-btn" onclick="filterOffers('family', this)">Family</button>
+        <button class="filter-btn" onclick="filterOffers('business', this)">Business</button>
+        <button class="filter-btn" onclick="filterOffers('seasonal', this)">Seasonal</button>
+    </div>
+
+    <div class="offers-grid" id="offersGrid">
+
+        <!-- OFFER 1 -->
+        <div class="offer-card" data-category="seasonal">
+            <div class="offer-img">
+                <img src="images/offer1.jpg" alt="Weekend Getaway">
+                <span class="discount">20% OFF</span>
+            </div>
+            <div class="offer-body">
+                <span class="tag">Weekend</span>
+                <h3>Weekend Getaway</h3>
+                <p>Escape the city and enjoy two nights of pure relaxation with late check-out and a welcome drink.</p>
+                <ul class="offer-perks">
+                    <li>✅ 2 nights for the price of 1.6</li>
+                    <li>✅ Complimentary breakfast</li>
+                    <li>✅ Late check-out (2 PM)</li>
+                </ul>
+                <div class="offer-footer">
+                    <div class="price">
+                        <span class="old">KSh 24,000</span>
+                        <span class="new">KSh 19,200</span>
+                    </div>
+                    <button onclick="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFER 2 -->
+        <div class="offer-card" data-category="romance">
+            <div class="offer-img">
+                <img src="images/offer2.jpg" alt="Honeymoon Package">
+                <span class="discount">BEST VALUE</span>
+            </div>
+            <div class="offer-body">
+                <span class="tag">Romance</span>
+                <h3>Honeymoon Package</h3>
+                <p>A romantic escape for newlyweds featuring a private candlelit dinner and rose-petal turndown service.</p>
+                <ul class="offer-perks">
+                    <li>✅ Suite with balcony</li>
+                    <li>✅ Candlelit dinner for two</li>
+                    <li>✅ Couples spa treatment</li>
+                    <li>✅ Champagne on arrival</li>
+                </ul>
+                <div class="offer-footer">
+                    <div class="price">
+                        <span class="new">KSh 45,000</span>
+                        <small>/ 3 nights</small>
+                    </div>
+                    <button onclick="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFER 3 -->
+        <div class="offer-card" data-category="family">
+            <div class="offer-img">
+                <img src="images/offer3.jpg" alt="Family Fun Package">
+                <span class="discount">KIDS FREE</span>
+            </div>
+            <div class="offer-body">
+                <span class="tag">Family</span>
+                <h3>Family Fun Package</h3>
+                <p>Make memories together with a package designed for the whole family — kids stay and eat free!</p>
+                <ul class="offer-perks">
+                    <li>✅ Kids under 12 stay free</li>
+                    <li>✅ Daily breakfast buffet</li>
+                    <li>✅ Free pool & game room access</li>
+                    <li>✅ Family photo session</li>
+                </ul>
+                <div class="offer-footer">
+                    <div class="price">
+                        <span class="new">KSh 32,000</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFER 4 -->
+        <div class="offer-card" data-category="business">
+            <div class="offer-img">
+                <img src="images/offer4.jpg" alt="Business Traveler">
+                <span class="discount">15% OFF</span>
+            </div>
+            <div class="offer-body">
+                <span class="tag">Business</span>
+                <h3>Business Traveller Deal</h3>
+                <p>Stay productive with fast Wi-Fi, airport transfers, and 24/7 room service tailored for professionals.</p>
+                <ul class="offer-perks">
+                    <li>✅ Free airport transfer</li>
+                    <li>✅ Express laundry service</li>
+                    <li>✅ Meeting room credit (1 hr)</li>
+                    <li>✅ Late check-out</li>
+                </ul>
+                <div class="offer-footer">
+                    <div class="price">
+                        <span class="new">KSh 18,700</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFER 5 -->
+        <div class="offer-card" data-category="seasonal">
+            <div class="offer-img">
+                <img src="images/offer5.jpg" alt="Festive Season">
+                <span class="discount">25% OFF</span>
+            </div>
+            <div class="offer-body">
+                <span class="tag">Seasonal</span>
+                <h3>Festive Season Special</h3>
+                <p>Celebrate the holidays in style with gala dinners, live music, and festive décor throughout the hotel.</p>
+                <ul class="offer-perks">
+                    <li>✅ Christmas Eve gala dinner</li>
+                    <li>✅ Live entertainment</li>
+                    <li>✅ Complimentary festive cocktails</li>
+                </ul>
+                <div class="offer-footer">
+                    <div class="price">
+                        <span class="old">KSh 28,000</span>
+                        <span class="new">KSh 21,000</span>
+                    </div>
+                    <button onclick="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- OFFER 6 -->
+        <div class="offer-card" data-category="romance">
+            <div class="offer-img">
+                <img src="images/offer6.jpg" alt="Anniversary Escape">
+                <span class="discount">FREE SPA</span>
+            </div>
+            <div class="offer-body">
+                <span class="tag">Romance</span>
+                <h3>Anniversary Escape</h3>
+                <p>Celebrate love with a relaxing spa session, private dinner, and a surprise gift for the couple.</p>
+                <ul class="offer-perks">
+                    <li>✅ 60-min couples massage</li>
+                    <li>✅ Private 3-course dinner</li>
+                    <li>✅ Anniversary cake & gift</li>
+                </ul>
+                <div class="offer-footer">
+                    <div class="price">
+                        <span class="new">KSh 38,000</span>
+                        <small>/ 2 nights</small>
+                    </div>
+                    <button onclick="bookNow()">Book Now</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p id="noOffers" class="no-offers" style="display:none;">No offers found in this category.</p>
+</section>
+
+<!-- ===== LOYALTY PROGRAM ===== -->
+<section class="loyalty">
+    <div class="loyalty-wrap">
+        <div class="loyalty-text">
+            <h2>Join Restoreland Rewards</h2>
+            <p>Earn points on every stay, unlock exclusive member rates, and enjoy perks like room upgrades and late check-out.</p>
+            <ul>
+                <li>Earn 10 points per KSh 1,000 spent</li>
+                <li> Free welcome gift on your first stay</li>
+                <li>Members-only flash sales</li>
+                <li> Complimentary room upgrade after 5 stays</li>
+            </ul>
+            <button class="btn-primary" onclick="joinRewards()">Join Free</button>
+        </div>
+        <div class="loyalty-image">
+            <img src="images/offers-hero.jpg" alt="Rewards Program">
+        </div>
+    </div>
+</section>
+
+<!-- ===== HOW IT WORKS ===== -->
+<section class="how-it-works">
+    <h2>How to Redeem an Offer</h2>
+    <div class="steps-grid">
+        <div class="step">
+            <div class="step-num">1</div>
+            <h3>Choose Your Offer</h3>
+            <p>Pick the package that suits your stay.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">2</div>
+            <h3>Book Online or Call</h3>
+            <p>Use the promo code or mention it when booking.</p>
+        </div>
+        <div class="step">
+            <div class="step-num">3</div>
+            <h3>Confirm & Enjoy</h3>
+            <p>We'll email confirmation and prepare your welcome.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== TERMS ===== -->
+<section class="terms">
+    <h2>Terms & Conditions</h2>
+    <ul>
+        <li>Offers are subject to availability and cannot be combined.</li>
+        <li>Advance booking required; blackout dates may apply during peak seasons.</li>
+        <li>Promo codes must be applied at the time of booking.</li>
+        <li>Prices shown are per room per night unless otherwise stated.</li>
+        <li>Rates exclude government taxes and service charges where applicable.</li>
+        <li>Restoreland Hotel reserves the right to modify or withdraw offers at any time.</li>
+    </ul>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+    <h2>Offer FAQs</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Can I combine multiple offers?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>No — only one offer or promo code can be applied per booking unless stated otherwise.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Are offers refundable?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Most special offers are non-refundable but can be rescheduled once, subject to availability.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Do offers apply during holidays?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Some offers are valid year-round; others exclude peak dates such as Christmas and New Year. Check each offer's details.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                How do I get the promo code?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Promo codes are listed on each offer card. You can also subscribe to our newsletter for exclusive codes.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter">
+    <h2>Never Miss a Deal</h2>
+    <p>Subscribe for exclusive offers, seasonal discounts, and member-only perks.</p>
+    <form onsubmit="subscribe(event)">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner">
+    <h2>Ready to Save on Your Next Stay?</h2>
+    <p>Book directly with us for the best rates and exclusive perks.</p>
+    <button onclick="bookNow()">Book Your Stay</button>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+            <h3>Annet's Restoreland Hotel</h3>
+            <p>Luxury, Comfort &amp; Peace in every stay.</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="about.html">About</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="dining.html">Dining</a>
+            <a href="offers.html">Offers</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Column 3: Newsletter -->
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Get exclusive offers, seasonal deals, and hotel news delivered to your inbox.</p>
+            <ul class="newsletter-perks">
+                <li>✔ Early access to offers</li>
+                <li>✔ Seasonal discounts</li>
+                <li>✔ Event announcements</li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact + Subscribe -->
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>+254 708 728 542</p>
+            <p> reservations@restoreland.com</p>
+            <p> Nairobi, Kenya</p>
+
+            <!-- Subscribe Form -->
+            <form action="https://formspree.io/f/xnpjqaja" method="post" id="subscribeForm" class="subscribe-form" novalidate>
+                <label for="subscribeEmail">Subscribe for updates</label>
+                <div class="subscribe-row">
+                    <input type="email" id="subscribeEmail" name="email"
+                           placeholder="Enter your email" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </div>
+                <span class="error" id="subscribeError"></span>
+                <p id="subscribeStatus" class="subscribe-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <p class="copyright">© 2026 Annet's Restoreland Hotel. All rights reserved.</p>
+</footer>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Book Your Stay</h2>
+        <form onsubmit="submitBooking(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Promo Code (optional)">
+            <input type="date" required>
+            <input type="date" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#myButton').floatingWhatsApp({
+            phone: '+254 708728542',
+            popupMessage: 'Hello, how can we help you?',
+            message: "I am thankful for this code",
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Welcome!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            buttonImage: '<img src="images/whatsapp.svg" />'
+        });
+    });
+</script>
+</body>
+</html>

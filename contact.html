@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Restoreland Hotel – reservations, enquiries, directions, and 24/7 support.">
+    <title>Annet`s Restoreland Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <title>Floating WA Message</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="style.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <div id="myButton"></div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+    <span> +254 708728542</span>
+    <span> reservations@restoreland.com</span>
+    <span> Nairobi, Kenya</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+     <div class="logo">
+    <div class="logo-text">
+        <h1>Restoreland</h1>
+        <span class="tagline">Luxury • Comfort • Peace</span>
+    </div>
+</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="dining.html">Dining</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button class="nav-book" onclick="bookNow()">Book Now</button>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" style="background-image:url('images/contact-hero.jpg')">
+    <div class="page-hero-content">
+        <h1>Get in Touch</h1>
+        <p>Home <span>›</span> Contact Us</p>
+    </div>
+</section>
+
+<!-- ===== QUICK CONTACT CARDS ===== -->
+<section class="contact-cards">
+    <div class="contact-card">
+        <div class="icon"></div>
+        <h3>Call Us</h3>
+        <p>+254 708728542</p>
+        <p class="small">24/7 Front Desk</p>
+    </div>
+    <div class="contact-card">
+        <div class="icon"></div>
+        <h3>Email Us</h3>
+        <p>reservations@restoreland.com</p>
+        <p class="small">Replies within 2 hours</p>
+    </div>
+    <div class="contact-card">
+        <div class="icon"></div>
+        <h3>Visit Us</h3>
+        <p>Restoreland Avenue, Nairobi</p>
+        <p class="small">Open daily 8am – 10pm</p>
+    </div>
+    <div class="contact-card">
+        <div class="icon"></div>
+        <h3>WhatsApp</h3>
+        <p>+254 708728542</p>
+        <p class="small">Instant chat support</p>
+    </div>
+</section>
+
+<!-- ===== CONTACT FORM + INFO ===== -->
+<section class="contact-main">
+    <div class="contact-form-wrap">
+        <h2>Send Us a Message</h2>
+        <p class="section-sub">We'd love to hear from you. Fill in the form and we'll respond shortly.</p>
+
+    <form action="https://formspree.io/f/mzeznypr" method="post" id="contactForm" novalidate>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                <span class="error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                <span class="error" id="emailError"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="phone">Phone (Optional)</label>
+                <input type="tel" id="phone" name="phone" placeholder="+254 ...">
+            </div>
+            <div class="form-group">
+                <label for="subject">Subject *</label>
+                <select id="subject" name="subject" required>
+                    <option value="">-- Select --</option>
+                    <option>Room Reservation</option>
+                    <option>Dining Enquiry</option>
+                    <option>Event / Conference</option>
+                    <option>Spa Booking</option>
+                    <option>Feedback</option>
+                    <option>Other</option>
+                </select>
+                <span class="error" id="subjectError"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="6" placeholder="How can we help you?" required></textarea>
+            <span class="error" id="messageError"></span>
+        </div>
+
+        <div class="form-check">
+            <input type="checkbox" id="consent" name="consent" required>
+            <label for="consent">I agree to be contacted by Restoreland Hotel.</label>
+        </div>
+
+        <button type="submit" class="btn-primary">Send Message</button>
+        <p id="formStatus" class="form-status"></p>
+    </form>
+    </div>
+
+    <aside class="contact-info">
+        <h3>Contact Information</h3>
+
+        <div class="info-item">
+            <span></span>
+            <div>
+                <strong>Address</strong>
+                <p>Restoreland Avenue, Westlands<br>Nairobi, Kenya</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <span></span>
+            <div>
+                <strong>Phone</strong>
+                <p>+254 708728542</p>
+                <p>+254 708728542 (WhatsApp)</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <span></span>
+            <div>
+                <strong>Email</strong>
+                <p>reservations@restoreland.com</p>
+                <p>info@restoreland.com</p>
+            </div>
+        </div>
+
+        <div class="info-item">
+            <span></span>
+            <div>
+                <strong>Office Hours</strong>
+                <p>Front Desk: 24/7</p>
+                <p>Reservations: 8am – 10pm daily</p>
+            </div>
+        </div>
+
+        <div class="social-row">
+            <a href="#" title="Facebook"></a>
+            <a href="#" title="Instagram"></a>
+            <a href="#" title="X"></a>
+            <a href="#" title="LinkedIn"></a>
+        </div>
+    </aside>
+</section>
+
+<!-- ===== DEPARTMENTS ===== -->
+<section class="departments">
+    <h2>Reach the Right Department</h2>
+    <p class="section-sub">Direct lines for faster service</p>
+    <div class="dept-grid">
+        <div class="dept-card">
+            <h3>Reservations</h3>
+            <p> +254 700 084 001</p>
+            <p> reservations@restoreland.com</p>
+        </div>
+        <div class="dept-card">
+            <h3>Events & Conferences</h3>
+            <p> +254 700 136 002</p>
+            <p> events@restoreland.com</p>
+        </div>
+        <div class="dept-card">
+            <h3>Dining & Bar</h3>
+            <p> +254 700 987 003</p>
+            <p> dining@restoreland.com</p>
+        </div>
+        <div class="dept-card">
+            <h3>Spa & Wellness</h3>
+            <p> +254 700 623 004</p>
+            <p> spa@restoreland.com</p>
+        </div>
+        <div class="dept-card">
+            <h3>Careers</h3>
+            <p> +254 700 453 005</p>
+            <p> careers@restoreland.com</p>
+        </div>
+        <div class="dept-card">
+            <h3>Press & Media</h3>
+            <p> +254 700 987 006</p>
+            <p> press@restoreland.com</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MAP ===== -->
+<section class="map-section">
+    <h2>Find Us on the Map</h2>
+    <iframe
+        src="https://www.google.com/maps?q=Nairobi,Kenya&output=embed"
+        width="100%" height="400" style="border:0;"
+        allowfullscreen loading="lazy">
+    </iframe>
+    <div class="directions">
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Nairobi,Kenya"
+           target="_blank" class="btn-link">Get Directions →</a>
+    </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                What time is check-in and check-out?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Check-in is from 2:00 PM and check-out is by 11:00 AM. Early check-in and late check-out may be available on request.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Do you offer airport transfers?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes! We provide 24/7 airport pick-up and drop-off. Please share your flight details at least 24 hours in advance.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Is parking available?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Yes — free secure parking is available for all guests, including valet service on request.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                Are pets allowed?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>We are proud to be a pet-friendly hotel. Please notify us when booking so we can prepare a comfortable stay.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" onclick="toggleFaq(this)">
+                How can I modify or cancel my booking?
+                <span>+</span>
+            </button>
+            <div class="faq-answer">
+                <p>Contact our reservations team by phone or email. Free cancellation is available up to 48 hours before arrival.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner">
+    <h2>Ready to Experience Restoreland?</h2>
+    <p>Book directly with us for the best rates.</p>
+    <button onclick="bookNow()">Book Your Stay</button>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+            <h3>Annet's Restoreland Hotel</h3>
+            <p>Luxury, Comfort &amp; Peace in every stay.</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="about.html">About</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="dining.html">Dining</a>
+            <a href="offers.html">Offers</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Column 3: Newsletter -->
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Get exclusive offers, seasonal deals, and hotel news delivered to your inbox.</p>
+            <ul class="newsletter-perks">
+                <li>✔ Early access to offers</li>
+                <li>✔ Seasonal discounts</li>
+                <li>✔ Event announcements</li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact + Subscribe -->
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>+254 708 728 542</p>
+            <p> reservations@restoreland.com</p>
+            <p> Nairobi, Kenya</p>
+
+            <!-- Subscribe Form -->
+            <form action="https://formspree.io/f/xnpjqaja" method="post" id="subscribeForm" class="subscribe-form" novalidate>
+                <label for="subscribeEmail">Subscribe for updates</label>
+                <div class="subscribe-row">
+                    <input type="email" id="subscribeEmail" name="email"
+                           placeholder="Enter your email" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </div>
+                <span class="error" id="subscribeError"></span>
+                <p id="subscribeStatus" class="subscribe-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <p class="copyright">© 2026 Annet's Restoreland Hotel. All rights reserved.</p>
+</footer>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Book Your Stay</h2>
+        <form onsubmit="submitBooking(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="date" required>
+            <input type="date" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#myButton').floatingWhatsApp({
+            phone: '+254 708728542',
+            popupMessage: 'Hello, how can we help you?',
+            message: "I am thankful for this code",
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Welcome!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            buttonImage: '<img src="images/whatsapp.svg" />'
+        });
+    });
+</script>
+</body>
+</html>

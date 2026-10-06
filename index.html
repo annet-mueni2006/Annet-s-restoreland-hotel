@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restoreland Hotel – Luxury, Comfort & Peace. Book your perfect stay today.">
+    <title>Annet`s Restoreland Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <title>Floating WA Message</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="style.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+<div id="myButton"></div>
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+    <span> +254 708728542</span>
+    <span> reservations@restoreland.com</span>
+    <span> Nairobi, Kenya</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+     <div class="logo">
+    <div class="logo-text">
+        <h1>Restoreland</h1>
+        <span class="tagline">Luxury • Comfort • Peace</span>
+    </div>
+</div>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="dining.html">Dining</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-book" onclick="bookNow()">Book Now</button>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- ===== HERO with SLIDESHOW ===== -->
+<section class="hero">
+    <div class="hero-slides">
+        <div class="slide active" style="background-image:url('images/hero1.jpg')"></div>
+        <div class="slide" style="background-image:url('images/hero2.jpg')"></div>
+        <div class="slide" style="background-image:url('images/hero3.jpg')"></div>
+    </div>
+    <div class="hero-content">
+        <h2>Welcome to Restoreland Hotel</h2>
+        <p>Luxury, Comfort & Peace</p>
+        <div class="hero-buttons">
+            <button onclick="bookNow()">Book Now</button>
+            <button class="outline" onclick="scrollToRooms()">Explore Rooms</button>
+        </div>
+    </div>
+</section>
+
+<!-- ===== BOOKING WIDGET ===== -->
+<section class="booking-widget">
+   <form action="https://formspree.io/f/xljdqgpa" method="POST" id="bookingForm">
+    <div class="field">
+        <label for="checkin">Check-In</label>
+        <input type="date" id="checkin" name="Check-In" required>
+    </div>
+
+    <div class="field">
+        <label for="checkout">Check-Out</label>
+        <input type="date" id="checkout" name="Check-Out" required>
+    </div>
+
+    <div class="field">
+        <label for="guests">Guests</label>
+        <select id="guests" name="Guests">
+            <option>1 Adult</option>
+            <option selected>2 Adults</option>
+            <option>2 Adults, 1 Child</option>
+            <option>Family (4+)</option>
+        </select>
+    </div>
+
+    <div class="field">
+        <label for="roomtype">Room Type</label>
+        <select id="roomtype" name="Room Type">
+            <option>Standard</option>
+            <option selected>Deluxe</option>
+            <option>Executive Suite</option>
+            <option>Presidential Suite</option>
+        </select>
+    </div>
+
+    <!-- Hidden helper fields (optional but recommended) -->
+    <input type="hidden" name="_subject" value="New Booking Inquiry — Annet's Restoreland">
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Check Availability</button>
+</form>
+</section>
+
+<!-- ===== WELCOME / ABOUT SNIPPET ===== -->
+<section class="welcome">
+    <h2>An Escape Like No Other</h2>
+    <p>Nestled in the heart of the city, Restoreland Hotel blends timeless elegance with modern comfort. Whether you're travelling for business or leisure, we offer an unforgettable experience tailored to you.</p>
+    <a href="about.html" class="btn-link">Learn More →</a>
+</section>
+
+<!-- ===== FEATURED CARDS ===== -->
+<section class="cards" id="rooms">
+    <h2>What We Offer</h2>
+    <div class="card-grid">
+        <div class="card">
+            <img src="images/image.png" alt="Luxury Rooms">
+            <h3>Luxury Rooms</h3>
+            <p>Spacious, elegantly furnished rooms with modern amenities.</p>
+            <a href="rooms.html">View Rooms →</a>
+        </div>
+        <div class="card">
+            <img src="images/dining.jpg" alt="Fine Dining">
+            <h3>Fine Dining</h3>
+            <p>World-class cuisine crafted by our award-winning chefs.</p>
+            <a href="dining.html">Explore Menu →</a>
+        </div>
+        <div class="card">
+            <img src="images/spa.jpg" alt="Spa & Relax">
+            <h3>Spa & Relax</h3>
+            <p>Rejuvenate your body and mind in our serene spa retreat.</p>
+            <a href="rooms.html">Book Spa →</a>
+        </div>
+    </div>
+</section>
+
+<!-- ===== AMENITIES ===== -->
+<section class="amenities">
+    <h2>Hotel Amenities</h2>
+    <ul>
+        <li>🛜 Free High-Speed Wi-Fi</li>
+        <li> Outdoor Swimming Pool</li>
+        <li> 24/7 Room Service</li>
+        <li> Free Parking</li>
+        <li> Fitness Center</li>
+        <li> Concierge Service</li>
+        <li> Air Conditioning</li>
+        <li> Pet Friendly</li>
+    </ul>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+    <h2>What Our Guests Say</h2>
+    <div class="testimonial-grid">
+        <blockquote>
+            "Absolutely stunning hotel. The service was impeccable and the rooms were spotless!"
+            <cite>— Amina K.</cite>
+        </blockquote>
+        <blockquote>
+            "Best dining experience I've had in years. I'll definitely be back."
+            <cite>— David M.</cite>
+        </blockquote>
+        <blockquote>
+            "The spa is heavenly. Perfect weekend getaway."
+            <cite>— Grace W.</cite>
+        </blockquote>
+    </div>
+</section>
+
+<!-- ===== OFFERS / CTA BANNER ===== -->
+<section class="cta-banner">
+    <h2>Special Offers Await</h2>
+    <p>Save up to 30% on your next stay. Limited time only.</p>
+    <button onclick="bookNow()">Claim Your Offer</button>
+</section>
+
+<!-- ===== NEWSLETTER ===== -->
+<section class="newsletter">
+    <h2>Stay Updated</h2>
+    <p>Subscribe for exclusive deals and news.</p>
+    <form onsubmit="subscribe(event)">
+        <input type="email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
+
+<!-- ===== MAP / LOCATION ===== -->
+<section class="location">
+    <h2>Find Us</h2>
+    <iframe
+        src="https://www.google.com/maps?q=Nairobi&output=embed"
+        width="100%" height="300" style="border:0;" loading="lazy">
+    </iframe>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+            <h3>Annet's Restoreland Hotel</h3>
+            <p>Luxury, Comfort &amp; Peace in every stay.</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="about.html">About</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="dining.html">Dining</a>
+            <a href="offers.html">Offers</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Column 3: Newsletter -->
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Get exclusive offers, seasonal deals, and hotel news delivered to your inbox.</p>
+            <ul class="newsletter-perks">
+                <li>✔ Early access to offers</li>
+                <li>✔ Seasonal discounts</li>
+                <li>✔ Event announcements</li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact + Subscribe -->
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>+254 708 728 542</p>
+            <p> reservations@restoreland.com</p>
+            <p> Nairobi, Kenya</p>
+
+            <!-- Subscribe Form -->
+            <form action="https://formspree.io/f/xnpjqaja" method="post" id="subscribeForm" class="subscribe-form" novalidate>
+                <label for="subscribeEmail">Subscribe for updates</label>
+                <div class="subscribe-row">
+                    <input type="email" id="subscribeEmail" name="email"
+                           placeholder="Enter your email" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </div>
+                <span class="error" id="subscribeError"></span>
+                <p id="subscribeStatus" class="subscribe-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <p class="copyright">© 2026 Annet's Restoreland Hotel. All rights reserved.</p>
+</footer>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Book Your Stay</h2>
+        <form onsubmit="submitBooking(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="date" required>
+            <input type="date" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<!-- ===== BACK TO TOP ===== -->
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+<script type="text/javascript">
+    $(function () {
+        $('#myButton').floatingWhatsApp({
+            phone: '+254 708728542',
+            popupMessage: 'Hello, how can we help you?',
+            message: "I am thankful for this code",
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Welcome!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            buttonImage: '<img src="images/whatsapp.svg" />'
+        });
+    });
+</script>
+
+<script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore luxury rooms and suites at Restoreland Hotel – from cosy singles to presidential suites.">
+    <title>Annet`s Restoreland Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <title>Floating WA Message</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="style.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <div id="myButton"></div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+    <span> +254 708728542</span>
+    <span> reservations@restoreland.com</span>
+    <span> Nairobi, Kenya</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+     <div class="logo">
+    <div class="logo-text">
+        <h1>Restoreland</h1>
+        <span class="tagline">Luxury • Comfort • Peace</span>
+    </div>
+</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html" class="active">Rooms</a>
+        <a href="dining.html">Dining</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-book" onclick="bookNow()">Book Now</button>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" style="background-image:url('images/rooms-hero.jpg')">
+    <div class="page-hero-content">
+        <h1>Rooms & Suites</h1>
+        <p>Home <span>›</span> Rooms</p>
+    </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="welcome">
+    <h2>Sleep in Style</h2>
+    <p>Every room at Restoreland is designed for rest and rejuvenation — plush bedding, curated art, quiet comfort, and thoughtful touches that make you feel at home. Whether you're here for one night or one month, your perfect room awaits.</p>
+</section>
+
+<!-- ===== QUICK BOOKING BAR ===== -->
+<section class="booking-widget">
+    <form action="https://formspree.io/f/xnpneojn" method="POST" id="bookingForm">
+    <div class="field">
+        <label for="checkin">Check-In</label>
+        <input type="date" id="checkin" name="Check-In" required>
+    </div>
+
+    <div class="field">
+        <label for="checkout">Check-Out</label>
+        <input type="date" id="checkout" name="Check-Out" required>
+    </div>
+
+    <div class="field">
+        <label for="guests">Guests</label>
+        <select id="guests" name="Guests">
+            <option>1 Adult</option>
+            <option selected>2 Adults</option>
+            <option>2 Adults, 1 Child</option>
+            <option>Family (4+)</option>
+        </select>
+    </div>
+
+    <input type="hidden" name="_subject" value="New Booking Inquiry — Annet's Restoreland">
+    <input type="text" name="_gotcha" style="display:none">
+
+    <button type="submit">Search Rooms</button>
+</form>
+</section>
+
+<!-- ===== FILTER TABS ===== -->
+<section class="rooms-section">
+    <h2>Choose Your Room</h2>
+    <p class="section-sub">From solo escapes to presidential luxury</p>
+
+    <div class="filter-tabs">
+        <button class="filter-btn active" onclick="filterRooms('all', this)">All Rooms</button>
+        <button class="filter-btn" onclick="filterRooms('standard', this)">Standard</button>
+        <button class="filter-btn" onclick="filterRooms('deluxe', this)">Deluxe</button>
+        <button class="filter-btn" onclick="filterRooms('suite', this)">Suites</button>
+        <button class="filter-btn" onclick="filterRooms('family', this)">Family</button>
+    </div>
+
+    <div class="rooms-grid" id="roomsGrid">
+
+        <!-- ROOM 1 -->
+        <div class="room-card" data-category="standard">
+            <div class="room-img">
+                <img src="images/image.png" alt="Single Room">
+                <span class="room-badge">Standard</span>
+            </div>
+            <div class="room-body">
+                <h3>Single Room</h3>
+                <p class="room-desc">A cosy, elegant room perfect for solo travellers. Queen bed, work desk, and city view.</p>
+                <ul class="room-amenities">
+                    <li> 22 m²</li>
+                    <li> 1 Queen Bed</li>
+                    <li> 1 Guest</li>
+                    <li>Free Wi-Fi</li>
+                </ul>
+                <div class="room-footer">
+                    <div class="price">
+                        <span class="new">KSh 5,000</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="openRoomModal('Single Room', 5000, 'images/room1.jpg', 'A cosy, elegant room perfect for solo travellers. Queen bed, work desk, and city view.')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROOM 2 -->
+        <div class="room-card" data-category="standard">
+            <div class="room-img">
+                <img src="images/room2.jpg" alt="Double Room">
+                <span class="room-badge">Standard</span>
+            </div>
+            <div class="room-body">
+                <h3>Double Room</h3>
+                <p class="room-desc">Spacious comfort for two — king bed, seating area, and a private balcony.</p>
+                <ul class="room-amenities">
+                    <li> 32 m²</li>
+                    <li> 1 King Bed</li>
+                    <li> 2 Guests</li>
+                    <li>Balcony</li>
+                </ul>
+                <div class="room-footer">
+                    <div class="price">
+                        <span class="new">KSh 8,000</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="openRoomModal('Double Room', 8000, 'images/room2.jpg', 'Spacious comfort for two — king bed, seating area, and a private balcony.')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROOM 3 -->
+        <div class="room-card" data-category="deluxe">
+            <div class="room-img">
+                <img src="images/room3.jpg" alt="Deluxe Room">
+                <span class="room-badge">Deluxe</span>
+            </div>
+            <div class="room-body">
+                <h3>Deluxe Room</h3>
+                <p class="room-desc">Elevated luxury with premium linens, marble bath, and a panoramic city view.</p>
+                <ul class="room-amenities">
+                    <li> 45 m²</li>
+                    <li> King Bed</li>
+                    <li> 2 Guests</li>
+                    <li> Marble Bath</li>
+                </ul>
+                <div class="room-footer">
+                    <div class="price">
+                        <span class="new">KSh 12,000</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="openRoomModal('Deluxe Room', 12000, 'images/room3.jpg', 'Elevated luxury with premium linens, marble bath, and a panoramic city view.')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROOM 4 -->
+        <div class="room-card" data-category="suite">
+            <div class="room-img">
+                <img src="images/room4.jpg" alt="Executive Suite">
+                <span class="room-badge featured"> Popular</span>
+            </div>
+            <div class="room-body">
+                <h3>Executive Suite</h3>
+                <p class="room-desc">A separate living room, king bed, dining area, and access to the Executive Lounge.</p>
+                <ul class="room-amenities">
+                    <li> 65 m²</li>
+                    <li>Living Room</li>
+                    <li> 2–3 Guests</li>
+                    <li> Lounge Access</li>
+                </ul>
+                <div class="room-footer">
+                    <div class="price">
+                        <span class="new">KSh 15,000</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="openRoomModal('Executive Suite', 15000, 'images/room4.jpg', 'A separate living room, king bed, dining area, and access to the Executive Lounge.')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROOM 5 -->
+        <div class="room-card" data-category="family">
+            <div class="room-img">
+                <img src="images/room5.jpg" alt="Family Room">
+                <span class="room-badge">Family</span>
+            </div>
+            <div class="room-body">
+                <h3>Family Room</h3>
+                <p class="room-desc">Two connected bedrooms, a lounge, and a kids' corner — perfect for families.</p>
+                <ul class="room-amenities">
+                    <li> 70 m²</li>
+                    <li> 2 Bedrooms</li>
+                    <li> 4 Guests</li>
+                    <li> Kids' Area</li>
+                </ul>
+                <div class="room-footer">
+                    <div class="price">
+                        <span class="new">KSh 18,000</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="openRoomModal('Family Room', 18000, 'images/room5.jpg', 'Two connected bedrooms, a lounge, and a kids\' corner — perfect for families.')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ROOM 6 -->
+        <div class="room-card" data-category="suite">
+            <div class="room-img">
+                <img src="images/room6.jpg" alt="Presidential Suite">
+                <span class="room-badge featured"> Presidential</span>
+            </div>
+            <div class="room-body">
+                <h3>Presidential Suite</h3>
+                <p class="room-desc">Our finest suite — private terrace, jacuzzi, butler service, and panoramic views.</p>
+                <ul class="room-amenities">
+                    <li> 120 m²</li>
+                    <li> Jacuzzi</li>
+                    <li> Butler Service</li>
+                    <li> Private Terrace</li>
+                </ul>
+                <div class="room-footer">
+                    <div class="price">
+                        <span class="new">KSh 35,000</span>
+                        <small>/ night</small>
+                    </div>
+                    <button onclick="openRoomModal('Presidential Suite', 35000, 'images/room6.jpg', 'Our finest suite — private terrace, jacuzzi, butler service, and panoramic views.')">View Details</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <p id="noRooms" class="no-offers" style="display:none;">No rooms found in this category.</p>
+</section>
+
+<!-- ===== IN-ROOM AMENITIES ===== -->
+<section class="amenities">
+    <h2>Every Room Includes</h2>
+    <ul>
+        <li> High-Speed Wi-Fi</li>
+        <li> Air Conditioning</li>
+        <li> Smart TV & Netflix</li>
+        <li> Coffee & Tea Station</li>
+        <li> Premium Toiletries</li>
+        <li> In-Room Safe</li>
+        <li> Daily Housekeeping</li>
+        <li> 24/7 Room Service</li>
+    </ul>
+</section>
+
+<!-- ===== ROOM COMPARISON ===== -->
+<section class="comparison">
+    <h2>Compare Rooms</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Room</th>
+                    <th>Size</th>
+                    <th>Guests</th>
+                    <th>Bed</th>
+                    <th>Price / Night</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Single Room</td>
+                    <td>22 m²</td>
+                    <td>1</td>
+                    <td>Queen</td>
+                    <td>KSh 5,000</td>
+                </tr>
+                <tr>
+                    <td>Double Room</td>
+                    <td>32 m²</td>
+                    <td>2</td>
+                    <td>King</td>
+                    <td>KSh 8,000</td>
+                </tr>
+                <tr>
+                    <td>Deluxe Room</td>
+                    <td>45 m²</td>
+                    <td>2</td>
+                    <td>King</td>
+                    <td>KSh 12,000</td>
+                </tr>
+                <tr>
+                    <td>Executive Suite</td>
+                    <td>65 m²</td>
+                    <td>2–3</td>
+                    <td>King</td>
+                    <td>KSh 15,000</td>
+                </tr>
+                <tr>
+                    <td>Family Room</td>
+                    <td>70 m²</td>
+                    <td>4</td>
+                    <td>2 Bedrooms</td>
+                    <td>KSh 18,000</td>
+                </tr>
+                <tr>
+                    <td>Presidential Suite</td>
+                    <td>120 m²</td>
+                    <td>2–4</td>
+                    <td>Super King</td>
+                    <td>KSh 35,000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<!-- ===== GUEST REVIEWS ===== -->
+<section class="testimonials">
+    <h2>What Guests Say About Our Rooms</h2>
+    <div class="testimonial-grid">
+        <blockquote>
+            "The bed was heavenly and the view was stunning. Best sleep I've had in years!"
+            <cite>— Sarah K., Executive Suite</cite>
+        </blockquote>
+        <blockquote>
+            "Spacious, spotless, and beautifully designed. The kids loved the family room."
+            <cite>— John M., Family Room</cite>
+        </blockquote>
+        <blockquote>
+            "The Deluxe Room exceeded expectations. Marble bathroom was a dream."
+            <cite>— Priya R., Deluxe Room</cite>
+        </blockquote>
+    </div>
+</section>
+
+<!-- ===== POLICY ===== -->
+<section class="policy">
+    <h2>Booking & Stay Policies</h2>
+    <div class="info-grid">
+        <div class="info-card">
+            <h4> Check-In / Check-Out</h4>
+            <p>Check-in from 2:00 PM. Check-out by 11:00 AM. Early/late available on request.</p>
+        </div>
+        <div class="info-card">
+            <h4>Payment</h4>
+            <p>Cash, cards, and mobile money (M-Pesa) accepted. Deposit required at booking.</p>
+        </div>
+        <div class="info-card">
+            <h4>House Rules</h4>
+            <p>Non-smoking rooms. Quiet hours after 10 PM. Pets welcome in select rooms.</p>
+        </div>
+        <div class="info-card">
+            <h4>Cancellation</h4>
+            <p>Free cancellation up to 48 hours before arrival. Later cancellations may be charged one night.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner">
+    <h2>Ready to Check In?</h2>
+    <p>Book directly for the best rates and complimentary perks.</p>
+    <button onclick="bookNow()">Book Your Room</button>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+            <h3>Annet's Restoreland Hotel</h3>
+            <p>Luxury, Comfort &amp; Peace in every stay.</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="about.html">About</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="dining.html">Dining</a>
+            <a href="offers.html">Offers</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Column 3: Newsletter -->
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Get exclusive offers, seasonal deals, and hotel news delivered to your inbox.</p>
+            <ul class="newsletter-perks">
+                <li>✔ Early access to offers</li>
+                <li>✔ Seasonal discounts</li>
+                <li>✔ Event announcements</li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact + Subscribe -->
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>+254 708 728 542</p>
+            <p> reservations@restoreland.com</p>
+            <p> Nairobi, Kenya</p>
+
+            <!-- Subscribe Form -->
+            <form action="https://formspree.io/f/xnpjqaja" method="post" id="subscribeForm" class="subscribe-form" novalidate>
+                <label for="subscribeEmail">Subscribe for updates</label>
+                <div class="subscribe-row">
+                    <input type="email" id="subscribeEmail" name="email"
+                           placeholder="Enter your email" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </div>
+                <span class="error" id="subscribeError"></span>
+                <p id="subscribeStatus" class="subscribe-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <p class="copyright">© 2026 Annet's Restoreland Hotel. All rights reserved.</p>
+</footer>
+
+<!-- ===== ROOM DETAILS MODAL ===== -->
+<div id="roomModal" class="modal">
+    <div class="modal-content room-modal-content">
+        <span class="close" onclick="closeRoomModal()">&times;</span>
+        <img id="modalImg" src="" alt="Room">
+        <div class="modal-room-body">
+            <h2 id="modalTitle">Room Name</h2>
+            <p id="modalDesc">Description</p>
+            <p class="modal-price">Price: <strong id="modalPrice">KSh 0</strong> / night</p>
+
+            <div class="modal-actions">
+                <button class="btn-primary" onclick="bookRoom()">Book This Room</button>
+                <button class="btn-secondary" onclick="closeRoomModal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Book Your Stay</h2>
+        <form onsubmit="submitBooking(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="text" placeholder="Room Type" id="bookingRoom" readonly>
+            <input type="date" required>
+            <input type="date" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#myButton').floatingWhatsApp({
+            phone: '+254 708728542',
+            popupMessage: 'Hello, how can we help you?',
+            message: "I am thankful for this code",
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Welcome!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            buttonImage: '<img src="images/whatsapp.svg" />'
+        });
+    });
+</script>
+</body>
+</html>

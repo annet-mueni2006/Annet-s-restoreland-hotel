@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dine at Restoreland Hotel – award-winning restaurants, fine wines, and unforgettable culinary experiences.">
+    <title>Annet`s Restoreland Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <meta charset="UTF-8">
+    <title>Floating WA Message</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha384-tsQFqpEReu7ZLhBV2VZlAu7zcOV+rXbYlF2cqB8txI/8aZajjp4Bqd+V6D5IgvKT" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="style.js"></script>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+    </style>
+</head>
+<body>
+    <div id="myButton"></div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+    <span> +254 708728542</span>
+    <span> dining@restoreland.com</span>
+    <span> Nairobi, Kenya</span>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header>
+     <div class="logo">
+    <div class="logo-text">
+        <h1>Restoreland</h1>
+        <span class="tagline">Luxury • Comfort • Peace</span>
+    </div>
+</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="rooms.html">Rooms</a>
+        <a href="dining.html" class="active">Dining</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-book" onclick="bookNow()">Book Now</button>
+    <button class="hamburger" onclick="toggleMenu()">☰</button>
+</header>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero" style="background-image:url('images/dining-hero.jpg')">
+    <div class="page-hero-content">
+        <h1>A Taste of Restoreland</h1>
+        <p>Home <span>›</span> Dining</p>
+    </div>
+</section>
+
+<!-- ===== INTRO ===== -->
+<section class="welcome">
+    <h2>Exceptional Culinary Journeys</h2>
+    <p>From farm-to-table African cuisine to elegant French fine dining, every meal at Restoreland is a celebration of flavour, craft, and hospitality. Our chefs source the finest local ingredients to create dishes that delight the senses.</p>
+</section>
+
+<!-- ===== RESTAURANTS ===== -->
+<section class="restaurants">
+    <h2>Our Restaurants & Bars</h2>
+    <p class="section-sub">Five unique culinary destinations under one roof</p>
+
+    <div class="restaurant-grid">
+        <div class="restaurant-card">
+            <img src="images/restaurant1.jpg" alt="The Golden Fork">
+            <div class="restaurant-info">
+                <h3>The Golden Fork</h3>
+                <p class="cuisine"> Fine Dining • French</p>
+                <p>An intimate fine dining experience featuring seasonal tasting menus and a curated wine cellar.</p>
+                <p class="hours"> 6:00 PM – 11:00 PM</p>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="images/restaurant2.jpg" alt="Savanna Grill">
+            <div class="restaurant-info">
+                <h3>Savanna Grill</h3>
+                <p class="cuisine">Steakhouse • African</p>
+                <p>Prime cuts, open-flame grills, and traditional African sides served in a warm, rustic setting.</p>
+                <p class="hours"> 12:00 PM – 10:30 PM</p>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="images/restaurant3.jpg" alt="Lotus Garden">
+            <div class="restaurant-info">
+                <h3>Lotus Garden</h3>
+                <p class="cuisine"> Asian • Sushi</p>
+                <p>Fresh sushi, dim sum, and Pan-Asian favourites in a tranquil garden-inspired space.</p>
+                <p class="hours"> 12:00 PM – 10:00 PM</p>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="images/restaurant4.jpg" alt="Skyline Rooftop Bar">
+            <div class="restaurant-info">
+                <h3>Skyline Rooftop Bar</h3>
+                <p class="cuisine"> Cocktails • Lounge</p>
+                <p>Signature cocktails, light bites, and panoramic city views — perfect for sunset.</p>
+                <p class="hours"> 4:00 PM – 1:00 AM</p>
+            </div>
+        </div>
+
+        <div class="restaurant-card">
+            <img src="images/restaurant5.jpg" alt="Café Bloom">
+            <div class="restaurant-info">
+                <h3>Café Bloom</h3>
+                <p class="cuisine"> Café • Pastries</p>
+                <p>Artisan coffee, fresh pastries, and light lunches served all day in a bright, cosy space.</p>
+                <p class="hours"> 6:30 AM – 6:00 PM</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MENU TABS ===== -->
+<section class="menu-section">
+    <h2>Signature Menu</h2>
+    <p class="section-sub">A small taste of what awaits you</p>
+
+    <div class="menu-tabs">
+        <button class="tab-btn active" onclick="showMenu('starters', this)">Starters</button>
+        <button class="tab-btn" onclick="showMenu('mains', this)">Main Courses</button>
+        <button class="tab-btn" onclick="showMenu('desserts', this)">Desserts</button>
+        <button class="tab-btn" onclick="showMenu('drinks', this)">Drinks</button>
+    </div>
+
+    <div class="menu-content">
+        <!-- STARTERS -->
+        <div class="menu-panel active" id="starters">
+            <div class="menu-item">
+                <div>
+                    <h4>Grilled Halloumi Salad</h4>
+                    <p>Charred halloumi, heirloom tomatoes, mint, olive oil</p>
+                </div>
+                <span class="price">KSh 1,200</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Seared Tuna Tataki</h4>
+                    <p>Yellowfin tuna, sesame, ginger soy, microgreens</p>
+                </div>
+                <span class="price">KSh 1,800</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Butternut Velvet Soup</h4>
+                    <p>Roasted butternut, coconut cream, toasted pumpkin seeds</p>
+                </div>
+                <span class="price">KSh 900</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Beef Carpaccio</h4>
+                    <p>Thinly sliced beef, arugula, parmesan, truffle oil</p>
+                </div>
+                <span class="price">KSh 1,500</span>
+            </div>
+        </div>
+
+        <!-- MAINS -->
+        <div class="menu-panel" id="mains">
+            <div class="menu-item">
+                <div>
+                    <h4>Grilled Lamb Chops</h4>
+                    <p>Herb-crusted lamb, rosemary jus, root vegetables</p>
+                </div>
+                <span class="price">KSh 3,200</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Pan-Seared Salmon</h4>
+                    <p>Atlantic salmon, lemon butter, asparagus, quinoa</p>
+                </div>
+                <span class="price">KSh 2,800</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Nyama Choma Platter</h4>
+                    <p>Grilled beef & goat, kachumbari, ugali, sukuma wiki</p>
+                </div>
+                <span class="price">KSh 2,500</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Wild Mushroom Risotto</h4>
+                    <p>Arborio rice, porcini, truffle oil, aged parmesan</p>
+                </div>
+                <span class="price">KSh 2,200</span>
+            </div>
+        </div>
+
+        <!-- DESSERTS -->
+        <div class="menu-panel" id="desserts">
+            <div class="menu-item">
+                <div>
+                    <h4>Molten Chocolate Lava Cake</h4>
+                    <p>Warm dark chocolate, vanilla bean ice cream</p>
+                </div>
+                <span class="price">KSh 900</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Passion Fruit Cheesecake</h4>
+                    <p>Baked cheesecake, tropical passion fruit glaze</p>
+                </div>
+                <span class="price">KSh 850</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Seasonal Fruit Platter</h4>
+                    <p>Fresh tropical fruits, mint, honey drizzle</p>
+                </div>
+                <span class="price">KSh 700</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Tiramisu Classico</h4>
+                    <p>Espresso-soaked ladyfingers, mascarpone, cocoa</p>
+                </div>
+                <span class="price">KSh 800</span>
+            </div>
+        </div>
+
+        <!-- DRINKS -->
+        <div class="menu-panel" id="drinks">
+            <div class="menu-item">
+                <div>
+                    <h4>Restoreland Signature Cocktail</h4>
+                    <p>Gin, hibiscus, lime, ginger, soda</p>
+                </div>
+                <span class="price">KSh 1,200</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Kenyan AA Pour-Over</h4>
+                    <p>Single-origin coffee, freshly roasted daily</p>
+                </div>
+                <span class="price">KSh 500</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>Fresh Tropical Juice</h4>
+                    <p>Mango, passion, pineapple — freshly pressed</p>
+                </div>
+                <span class="price">KSh 450</span>
+            </div>
+            <div class="menu-item">
+                <div>
+                    <h4>House Red / White Wine</h4>
+                    <p>Curated selection from South Africa & France</p>
+                </div>
+                <span class="price">KSh 950 / glass</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===== MEET THE CHEF ===== -->
+<section class="chef-section">
+    <div class="chef-grid">
+        <div class="chef-image">
+            <img src="images/team2.jpg" alt="Executive Chef">
+        </div>
+        <div class="chef-text">
+            <h2>Meet Our Executive Chef</h2>
+            <h3>Chef Amina Yusuf</h3>
+            <p class="chef-credentials">Michelin-trained • 20+ years experience</p>
+            <p>With a passion for blending African heritage with French technique, Chef Amina leads our culinary team with creativity and precision. Her philosophy is simple: respect the ingredient, honour the guest, and never stop innovating.</p>
+            <blockquote class="chef-quote">
+                "Every plate tells a story — of the land, the season, and the people who grew it."
+            </blockquote>
+        </div>
+    </div>
+</section>
+
+<!-- ===== SPECIAL EVENTS ===== -->
+<section class="dining-events">
+    <h2>Dining Experiences & Events</h2>
+    <div class="events-grid">
+        <div class="event-card">
+            <div class="event-icon"></div>
+            <h3>Wine Tasting Evenings</h3>
+            <p>Every Friday — explore curated wines paired with canapés.</p>
+        </div>
+        <div class="event-card">
+            <div class="event-icon"></div>
+            <h3>Sunday Brunch</h3>
+            <p>A lavish buffet brunch with live stations and free-flow bubbles.</p>
+        </div>
+        <div class="event-card">
+            <div class="event-icon"></div>
+            <h3>Chef's Table</h3>
+            <p>An intimate 8-course tasting menu prepared before your eyes.</p>
+        </div>
+        <div class="event-card">
+            <div class="event-icon"></div>
+            <h3>Private Dining</h3>
+            <p>Bespoke menus for birthdays, anniversaries, and corporate dinners.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== DIETARY & INFO ===== -->
+<section class="dining-info">
+    <h2>Good to Know</h2>
+    <div class="info-grid">
+        <div class="info-card">
+            <h4> Dietary Options</h4>
+            <p>Vegetarian, vegan, gluten-free, and halal options available at every restaurant.</p>
+        </div>
+        <div class="info-card">
+            <h4> Dress Code</h4>
+            <p>Smart casual at all restaurants. The Golden Fork requires formal attire.</p>
+        </div>
+        <div class="info-card">
+            <h4>Family Friendly</h4>
+            <p>Children's menus and high chairs available. Kids under 5 eat free at Café Bloom.</p>
+        </div>
+        <div class="info-card">
+            <h4> Payments</h4>
+            <p>Cash, all major cards, and mobile money (M-Pesa) accepted.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ===== RESERVATION FORM ===== -->
+<section class="reservation-section">
+    <div class="reservation-wrap">
+        <h2>Reserve a Table</h2>
+        <p class="section-sub">Book your dining experience — we'll confirm within 2 hours</p>
+
+    <form action="https://formspree.io/f/xljdqokg" method="post" id="reservationForm" novalidate>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="resName">Full Name *</label>
+                <input type="text" id="resName" name="name" placeholder="Your Name" required>
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="resEmail">Email *</label>
+                <input type="email" id="resEmail" name="email" placeholder="you@example.com" required>
+                <span class="error"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="resPhone">Phone *</label>
+                <input type="tel" id="resPhone" name="phone" placeholder="+254 ..." required>
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="resRestaurant">Restaurant *</label>
+                <select id="resRestaurant" name="restaurant" required>
+                    <option value="">-- Select --</option>
+                    <option>The Golden Fork</option>
+                    <option>Savanna Grill</option>
+                    <option>Lotus Garden</option>
+                    <option>Skyline Rooftop Bar</option>
+                    <option>Café Bloom</option>
+                </select>
+                <span class="error"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="resDate">Date *</label>
+                <input type="date" id="resDate" name="date" required>
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="resTime">Time *</label>
+                <input type="time" id="resTime" name="time" required>
+                <span class="error"></span>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="resGuests">Number of Guests *</label>
+                <select id="resGuests" name="guests" required>
+                    <option value="">-- Select --</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6+</option>
+                </select>
+                <span class="error"></span>
+            </div>
+            <div class="form-group">
+                <label for="resOccasion">Occasion (Optional)</label>
+                <select id="resOccasion" name="occasion">
+                    <option value="">-- None --</option>
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                    <option>Business Dinner</option>
+                    <option>Date Night</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="resNotes">Special Requests (Optional)</label>
+            <textarea id="resNotes" name="notes" rows="3" placeholder="Allergies, seating preference, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary">Reserve Table</button>
+        <p id="resStatus" class="form-status"></p>
+    </form>
+    </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner">
+    <h2>Hungry Yet?</h2>
+    <p>Reserve your table today or explore our full menu at the hotel.</p>
+    <button onclick="scrollToReservation()">Reserve Now</button>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+    <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+            <h3>Annet's Restoreland Hotel</h3>
+            <p>Luxury, Comfort &amp; Peace in every stay.</p>
+        </div>
+
+        <!-- Column 2: Quick Links -->
+        <div class="footer-links">
+            <h4>Quick Links</h4>
+            <a href="about.html">About</a>
+            <a href="rooms.html">Rooms</a>
+            <a href="dining.html">Dining</a>
+            <a href="offers.html">Offers</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <!-- Column 3: Newsletter -->
+        <div class="footer-newsletter">
+            <h4>Newsletter</h4>
+            <p>Get exclusive offers, seasonal deals, and hotel news delivered to your inbox.</p>
+            <ul class="newsletter-perks">
+                <li>✔ Early access to offers</li>
+                <li>✔ Seasonal discounts</li>
+                <li>✔ Event announcements</li>
+            </ul>
+        </div>
+
+        <!-- Column 4: Contact + Subscribe -->
+        <div class="footer-contact">
+            <h4>Contact</h4>
+            <p>+254 708 728 542</p>
+            <p> reservations@restoreland.com</p>
+            <p> Nairobi, Kenya</p>
+
+            <!-- Subscribe Form -->
+            <form action="https://formspree.io/f/xnpjqaja" method="post" id="subscribeForm" class="subscribe-form" novalidate>
+                <label for="subscribeEmail">Subscribe for updates</label>
+                <div class="subscribe-row">
+                    <input type="email" id="subscribeEmail" name="email"
+                           placeholder="Enter your email" required>
+                    <button type="submit" class="btn-subscribe">Subscribe</button>
+                </div>
+                <span class="error" id="subscribeError"></span>
+                <p id="subscribeStatus" class="subscribe-status"></p>
+            </form>
+        </div>
+    </div>
+
+    <p class="copyright">© 2026 Annet's Restoreland Hotel. All rights reserved.</p>
+</footer>
+
+<!-- ===== BOOKING MODAL ===== -->
+<div id="bookingModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Book Your Stay</h2>
+        <form onsubmit="submitBooking(event)">
+            <input type="text" placeholder="Full Name" required>
+            <input type="email" placeholder="Email" required>
+            <input type="date" required>
+            <input type="date" required>
+            <button type="submit">Confirm Booking</button>
+        </form>
+    </div>
+</div>
+
+<button id="backToTop" onclick="scrollToTop()">↑</button>
+
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#myButton').floatingWhatsApp({
+            phone: '+254 708728542',
+            popupMessage: 'Hello, how can we help you?',
+            message: "I am thankful for this code",
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Welcome!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            buttonImage: '<img src="images/whatsapp.svg" />'
+        });
+    });
+</script>
+</body>
+</html>
