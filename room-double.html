@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Double Room — Special Items | Restoreland Hotel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+<div class="topbar">
+    <span> +254 708728542</span>
+    <span> reservations@restoreland.com</span>
+    <span> Nairobi, Kenya</span>
+</div>
+
+<header>
+    <div class="logo">
+        <div class="logo-text">
+            <h1>Restoreland</h1>
+            <span class="tagline">Luxury • Comfort • Peace</span>
+        </div>
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+            <a href="about.html">About ▾</a>
+            <div class="dropdown-content">
+                <a href="team.html"><i class="fas fa-users"></i> View All Team Members</a>
+                <a href="about.html#our-story"><i class="fas fa-book-open"></i> Our Story</a>
+                <a href="about.html#timeline"><i class="fas fa-clock"></i> Our Journey</a>
+            </div>
+        </div>
+        <a href="rooms.html" class="active">Rooms</a>
+        <a href="dining.html">Dining</a>
+        <a href="offers.html">Offers</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="nav-book" onclick="bookNow()">Book Now</button>
+</header>
+
+<section class="room-hero">
+    <div class="room-hero-inner">
+        <img src="images/room2.jpg" alt="Double Room" class="room-hero-img">
+        <div class="room-hero-text">
+            <span class="room-hero-label">Standard Room</span>
+            <h1>Double Room</h1>
+            <p class="room-hero-tagline">Spacious comfort for two — KSh 8,000 / night</p>
+            <div class="room-hero-actions">
+                <a href="rooms.html" class="btn-back">← Back to All Rooms</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="special-items">
+    <h2> Special Items in the Double Room</h2>
+    <p class="section-sub">Everything you need for a relaxing stay for two</p>
+
+    <div class="special-grid">
+
+        <!-- ITEM 1 -->
+        <div class="special-card">
+            <div class="special-img">
+                <img src="images/special-king-bed.jpg" alt="King-Size Bed">
+                <div class="special-icon"><i class="fas fa-bed"></i></div>
+            </div>
+            <div class="special-body">
+                <h3>King-Size Bed</h3>
+                <p>Luxurious king bed with memory foam mattress, premium duvet, and six plush pillows.</p>
+            </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="special-card">
+            <div class="special-img">
+                <img src="images/special-seating.jpg" alt="Private Seating Area">
+                <div class="special-icon"><i class="fas fa-couch"></i></div>
+            </div>
+            <div class="special-body">
+                <h3>Private Seating Area</h3>
+                <p>A cosy two-seater sofa with a coffee table — perfect for reading or enjoying room service.</p>
+            </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="special-card">
+            <div class="special-img">
+                <img src="images/special-balcony.jpg" alt="Private Balcony">
+                <div class="special-icon"><i class="fas fa-door-open"></i></div>
+            </div>
+            <div class="special-body">
+                <h3>Private Balcony</h3>
+                <p>Step out onto your own balcony with two chairs and a table overlooking the gardens.</p>
+            </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="special-card">
+            <div class="special-img">
+                <img src="images/special-rain-shower.jpg" alt="Rain Shower">
+                <div class="special-icon"><i class="fas fa-shower"></i></div>
+            </div>
+            <div class="special-body">
+                <h3>Rain Shower</h3>
+                <p>A walk-in rain shower with premium bath amenities, fluffy robes, and slippers.</p>
+            </div>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div class="special-card">
+            <div class="special-img">
+                <img src="images/special-minibar.jpg" alt="Mini Bar & Wine Fridge">
+                <div class="special-icon"><i class="fas fa-wine-glass-alt"></i></div>
+            </div>
+            <div class="special-body">
+                <h3>Mini Bar &amp; Wine Fridge</h3>
+                <p>Stocked mini bar with soft drinks, snacks, and a curated selection of wines and spirits.</p>
+            </div>
+        </div>
+
+        <!-- ITEM 6 -->
+        <div class="special-card">
+            <div class="special-img">
+                <img src="images/special-climate.jpg" alt="Climate Control">
+                <div class="special-icon"><i class="fas fa-snowflake"></i></div>
+            </div>
+            <div class="special-body">
+                <h3>Climate Control</h3>
+                <p>Individual air conditioning and heating with a whisper-quiet operation for restful sleep.</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="special-cta">
+    <a href="rooms.html" class="btn-view-all">← Back to All Rooms</a>
+    <button onclick="toggleBookingForm()" class="btn-view-all alt">Book This Room</button>
+</div>
+
+    <!-- ===== INLINE BOOKING FORM (hidden until toggled) ===== -->
+<div id="inlineBookingForm" class="inline-booking">
+    <div class="inline-booking-inner">
+
+        <div class="inline-booking-header">
+            <h3>Reserve the Double Room</h3>
+            <p>Fill in your details and we'll confirm your reservation shortly.</p>
+        </div>
+
+        <form action="https://formspree.io/f/xeaekpyb" method="post" id="bookingForm" >
+
+            <!-- Room + Price (auto-filled, readonly) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bookingRoom">Room Type</label>
+                    <input type="text" id="bookingRoom" name="room" value="Double Room" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="bookingPrice">Rate / Night</label>
+                    <input type="text" id="bookingPrice" name="price" value="KSh 8,000" readonly>
+                </div>
+            </div>
+
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="bookingName">Full Name *</label>
+                <input type="text" id="bookingName" name="name" placeholder="e.g. Jane Doe" required>
+            </div>
+
+            <!-- Email + Phone -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bookingEmail">Email Address *</label>
+                    <input type="email" id="bookingEmail" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingPhone">Phone Number *</label>
+                    <input type="tel" id="bookingPhone" name="phone" placeholder="+254 700 000 000" required>
+                </div>
+            </div>
+
+            <!-- Check-in / Check-out -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bookingCheckin">Check-in *</label>
+                    <input type="date" id="bookingCheckin" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="bookingCheckout">Check-out *</label>
+                    <input type="date" id="bookingCheckout" name="checkout" required>
+                </div>
+            </div>
+
+            <!-- Guests -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="bookingAdults">Adults *</label>
+                    <select id="bookingAdults" name="adults" required>
+                        <option value="1">1</option>
+                        <option value="2" selected>2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="bookingChildren">Children</label>
+                    <select id="bookingChildren" name="children">
+                        <option value="0" selected>0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Special Requests -->
+            <div class="form-group">
+                <label for="bookingRequests">Special Requests</label>
+                <textarea id="bookingRequests" name="requests" rows="3" placeholder="Airport pickup, dietary needs, celebrations..."></textarea>
+            </div>
+
+            <!-- Submit -->
+            <button type="submit" class="btn-submit-booking">
+                Confirm Reservation <i class="fas fa-check"></i>
+            </button>
+
+            <p id="bookingStatus" class="booking-status"></p>
+
+        </form>
+    </div>
+</div>
+</section>
+
+<footer>
+    <p class="copyright">© 2026 Annet's Restoreland Hotel. All rights reserved.</p>
+</footer>
+<script src="js/script.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('#myButton').floatingWhatsApp({
+            phone: '+254 708728542',
+            popupMessage: 'Hello, how can we help you?',
+            message: "I am thankful for this code",
+            showPopup: true,
+            showOnIE: false,
+            headerTitle: 'Welcome!',
+            headerColor: 'green',
+            backgroundColor: 'green',
+            buttonImage: '<img src="images/whatsapp.svg" />'
+        });
+    });
+</script>
+
+</body>
+</html>

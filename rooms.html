@@ -40,7 +40,14 @@
 </div>
     <nav>
         <a href="index.html">Home</a>
-        <a href="about.html">About</a>
+        <div class="dropdown">
+            <a href="about.html" class="active">About ▾</a>
+            <div class="dropdown-content">
+                <a href="team.html"><i class="fas fa-users"></i> View All Team Members</a>
+                <a href="about.html#our-story"><i class="fas fa-book-open"></i> Our Story</a>
+                <a href="about.html#timeline"><i class="fas fa-clock"></i> Our Journey</a>
+            </div>
+        </div>
         <a href="rooms.html" class="active">Rooms</a>
         <a href="dining.html">Dining</a>
         <a href="offers.html">Offers</a>
@@ -95,175 +102,177 @@
 </section>
 
 <!-- ===== FILTER TABS ===== -->
-<section class="rooms-section">
-    <h2>Choose Your Room</h2>
-    <p class="section-sub">From solo escapes to presidential luxury</p>
+<div class="rooms-grid" id="roomsGrid">
 
-    <div class="filter-tabs">
-        <button class="filter-btn active" onclick="filterRooms('all', this)">All Rooms</button>
-        <button class="filter-btn" onclick="filterRooms('standard', this)">Standard</button>
-        <button class="filter-btn" onclick="filterRooms('deluxe', this)">Deluxe</button>
-        <button class="filter-btn" onclick="filterRooms('suite', this)">Suites</button>
-        <button class="filter-btn" onclick="filterRooms('family', this)">Family</button>
-    </div>
-
-    <div class="rooms-grid" id="roomsGrid">
-
-        <!-- ROOM 1 -->
-        <div class="room-card" data-category="standard">
-            <div class="room-img">
-                <img src="images/image.png" alt="Single Room">
-                <span class="room-badge">Standard</span>
-            </div>
-            <div class="room-body">
-                <h3>Single Room</h3>
-                <p class="room-desc">A cosy, elegant room perfect for solo travellers. Queen bed, work desk, and city view.</p>
-                <ul class="room-amenities">
-                    <li> 22 m²</li>
-                    <li> 1 Queen Bed</li>
-                    <li> 1 Guest</li>
-                    <li>Free Wi-Fi</li>
-                </ul>
-                <div class="room-footer">
-                    <div class="price">
-                        <span class="new">KSh 5,000</span>
-                        <small>/ night</small>
-                    </div>
-                    <button onclick="openRoomModal('Single Room', 5000, 'images/room1.jpg', 'A cosy, elegant room perfect for solo travellers. Queen bed, work desk, and city view.')">View Details</button>
+    <!-- ROOM 1 — Single Room -->
+    <div class="room-card" data-category="standard">
+        <div class="room-img">
+            <img src="images/image.png" alt="Single Room">
+            <span class="room-badge">Standard</span>
+        </div>
+        <div class="room-body">
+            <h3>Single Room</h3>
+            <p class="room-desc">A cosy, elegant room perfect for solo travellers. Queen bed, work desk, and city view.</p>
+            <ul class="room-amenities">
+                <li> 22 m²</li>
+                <li> 1 Queen Bed</li>
+                <li> 1 Guest</li>
+                <li>Free Wi-Fi</li>
+            </ul>
+            <div class="room-footer">
+                <div class="price">
+                    <span class="new">KSh 5,000</span>
+                    <small>/ night</small>
+                </div>
+                <div class="room-actions">
+                    <button onclick="openRoomModal('Single Room', 5000, 'images/image.png', 'A cosy, elegant room perfect for solo travellers.')">View Details</button>
+                    <a href="room-single.html" class="btn-special">✨ Special Items</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- ROOM 2 -->
-        <div class="room-card" data-category="standard">
-            <div class="room-img">
-                <img src="images/room2.jpg" alt="Double Room">
-                <span class="room-badge">Standard</span>
-            </div>
-            <div class="room-body">
-                <h3>Double Room</h3>
-                <p class="room-desc">Spacious comfort for two — king bed, seating area, and a private balcony.</p>
-                <ul class="room-amenities">
-                    <li> 32 m²</li>
-                    <li> 1 King Bed</li>
-                    <li> 2 Guests</li>
-                    <li>Balcony</li>
-                </ul>
-                <div class="room-footer">
-                    <div class="price">
-                        <span class="new">KSh 8,000</span>
-                        <small>/ night</small>
-                    </div>
+    <!-- ROOM 2 — Double Room -->
+    <div class="room-card" data-category="standard">
+        <div class="room-img">
+            <img src="images/room2.jpg" alt="Double Room">
+            <span class="room-badge">Standard</span>
+        </div>
+        <div class="room-body">
+            <h3>Double Room</h3>
+            <p class="room-desc">Spacious comfort for two — king bed, seating area, and a private balcony.</p>
+            <ul class="room-amenities">
+                <li> 32 m²</li>
+                <li> 1 King Bed</li>
+                <li> 2 Guests</li>
+                <li>Balcony</li>
+            </ul>
+            <div class="room-footer">
+                <div class="price">
+                    <span class="new">KSh 8,000</span>
+                    <small>/ night</small>
+                </div>
+                <div class="room-actions">
                     <button onclick="openRoomModal('Double Room', 8000, 'images/room2.jpg', 'Spacious comfort for two — king bed, seating area, and a private balcony.')">View Details</button>
+                    <a href="room-double.html" class="btn-special"> Special Items</a>
                 </div>
             </div>
         </div>
-
-        <!-- ROOM 3 -->
-        <div class="room-card" data-category="deluxe">
-            <div class="room-img">
-                <img src="images/room3.jpg" alt="Deluxe Room">
-                <span class="room-badge">Deluxe</span>
-            </div>
-            <div class="room-body">
-                <h3>Deluxe Room</h3>
-                <p class="room-desc">Elevated luxury with premium linens, marble bath, and a panoramic city view.</p>
-                <ul class="room-amenities">
-                    <li> 45 m²</li>
-                    <li> King Bed</li>
-                    <li> 2 Guests</li>
-                    <li> Marble Bath</li>
-                </ul>
-                <div class="room-footer">
-                    <div class="price">
-                        <span class="new">KSh 12,000</span>
-                        <small>/ night</small>
-                    </div>
-                    <button onclick="openRoomModal('Deluxe Room', 12000, 'images/room3.jpg', 'Elevated luxury with premium linens, marble bath, and a panoramic city view.')">View Details</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ROOM 4 -->
-        <div class="room-card" data-category="suite">
-            <div class="room-img">
-                <img src="images/room4.jpg" alt="Executive Suite">
-                <span class="room-badge featured"> Popular</span>
-            </div>
-            <div class="room-body">
-                <h3>Executive Suite</h3>
-                <p class="room-desc">A separate living room, king bed, dining area, and access to the Executive Lounge.</p>
-                <ul class="room-amenities">
-                    <li> 65 m²</li>
-                    <li>Living Room</li>
-                    <li> 2–3 Guests</li>
-                    <li> Lounge Access</li>
-                </ul>
-                <div class="room-footer">
-                    <div class="price">
-                        <span class="new">KSh 15,000</span>
-                        <small>/ night</small>
-                    </div>
-                    <button onclick="openRoomModal('Executive Suite', 15000, 'images/room4.jpg', 'A separate living room, king bed, dining area, and access to the Executive Lounge.')">View Details</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ROOM 5 -->
-        <div class="room-card" data-category="family">
-            <div class="room-img">
-                <img src="images/room5.jpg" alt="Family Room">
-                <span class="room-badge">Family</span>
-            </div>
-            <div class="room-body">
-                <h3>Family Room</h3>
-                <p class="room-desc">Two connected bedrooms, a lounge, and a kids' corner — perfect for families.</p>
-                <ul class="room-amenities">
-                    <li> 70 m²</li>
-                    <li> 2 Bedrooms</li>
-                    <li> 4 Guests</li>
-                    <li> Kids' Area</li>
-                </ul>
-                <div class="room-footer">
-                    <div class="price">
-                        <span class="new">KSh 18,000</span>
-                        <small>/ night</small>
-                    </div>
-                    <button onclick="openRoomModal('Family Room', 18000, 'images/room5.jpg', 'Two connected bedrooms, a lounge, and a kids\' corner — perfect for families.')">View Details</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- ROOM 6 -->
-        <div class="room-card" data-category="suite">
-            <div class="room-img">
-                <img src="images/room6.jpg" alt="Presidential Suite">
-                <span class="room-badge featured"> Presidential</span>
-            </div>
-            <div class="room-body">
-                <h3>Presidential Suite</h3>
-                <p class="room-desc">Our finest suite — private terrace, jacuzzi, butler service, and panoramic views.</p>
-                <ul class="room-amenities">
-                    <li> 120 m²</li>
-                    <li> Jacuzzi</li>
-                    <li> Butler Service</li>
-                    <li> Private Terrace</li>
-                </ul>
-                <div class="room-footer">
-                    <div class="price">
-                        <span class="new">KSh 35,000</span>
-                        <small>/ night</small>
-                    </div>
-                    <button onclick="openRoomModal('Presidential Suite', 35000, 'images/room6.jpg', 'Our finest suite — private terrace, jacuzzi, butler service, and panoramic views.')">View Details</button>
-                </div>
-            </div>
-        </div>
-
     </div>
 
-    <p id="noRooms" class="no-offers" style="display:none;">No rooms found in this category.</p>
-</section>
+    <!-- ROOM 3 — Deluxe Room -->
+    <div class="room-card" data-category="deluxe">
+        <div class="room-img">
+            <img src="images/room3.jpg" alt="Deluxe Room">
+            <span class="room-badge">Deluxe</span>
+        </div>
+        <div class="room-body">
+            <h3>Deluxe Room</h3>
+            <p class="room-desc">Elevated luxury with premium linens, marble bath, and a panoramic city view.</p>
+            <ul class="room-amenities">
+                <li> 45 m²</li>
+                <li> King Bed</li>
+                <li> 2 Guests</li>
+                <li> Marble Bath</li>
+            </ul>
+            <div class="room-footer">
+                <div class="price">
+                    <span class="new">KSh 12,000</span>
+                    <small>/ night</small>
+                </div>
+                <div class="room-actions">
+                    <button onclick="openRoomModal('Deluxe Room', 12000, 'images/room3.jpg', 'Elevated luxury with premium linens, marble bath, and a panoramic city view.')">View Details</button>
+                    <a href="room-deluxe.html" class="btn-special"> Special Items</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- ROOM 4 — Executive Suite -->
+    <div class="room-card" data-category="suite">
+        <div class="room-img">
+            <img src="images/room4.jpg" alt="Executive Suite">
+            <span class="room-badge featured"> Popular</span>
+        </div>
+        <div class="room-body">
+            <h3>Executive Suite</h3>
+            <p class="room-desc">A separate living room, king bed, dining area, and access to the Executive Lounge.</p>
+            <ul class="room-amenities">
+                <li> 65 m²</li>
+                <li>Living Room</li>
+                <li> 2–3 Guests</li>
+                <li> Lounge Access</li>
+            </ul>
+            <div class="room-footer">
+                <div class="price">
+                    <span class="new">KSh 15,000</span>
+                    <small>/ night</small>
+                </div>
+                <div class="room-actions">
+                    <button onclick="openRoomModal('Executive Suite', 15000, 'images/room4.jpg', 'A separate living room, king bed, dining area, and access to the Executive Lounge.')">View Details</button>
+                    <a href="room-executive.html" class="btn-special">✨ Special Items</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROOM 5 — Family Room -->
+    <div class="room-card" data-category="family">
+        <div class="room-img">
+            <img src="images/room5.jpg" alt="Family Room">
+            <span class="room-badge">Family</span>
+        </div>
+        <div class="room-body">
+            <h3>Family Room</h3>
+            <p class="room-desc">Two connected bedrooms, a lounge, and a kids' corner — perfect for families.</p>
+            <ul class="room-amenities">
+                <li> 70 m²</li>
+                <li> 2 Bedrooms</li>
+                <li> 4 Guests</li>
+                <li> Kids' Area</li>
+            </ul>
+            <div class="room-footer">
+                <div class="price">
+                    <span class="new">KSh 18,000</span>
+                    <small>/ night</small>
+                </div>
+                <div class="room-actions">
+                    <button onclick="openRoomModal('Family Room', 18000, 'images/room5.jpg', 'Two connected bedrooms, a lounge, and a kids\' corner.')">View Details</button>
+                    <a href="room-family.html" class="btn-special"> Special Items</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ROOM 6 — Presidential Suite -->
+    <div class="room-card" data-category="suite">
+        <div class="room-img">
+            <img src="images/room6.jpg" alt="Presidential Suite">
+            <span class="room-badge featured"> Presidential</span>
+        </div>
+        <div class="room-body">
+            <h3>Presidential Suite</h3>
+            <p class="room-desc">Our finest suite — private terrace, jacuzzi, butler service, and panoramic views.</p>
+            <ul class="room-amenities">
+                <li> 120 m²</li>
+                <li> Jacuzzi</li>
+                <li> Butler Service</li>
+                <li> Private Terrace</li>
+            </ul>
+            <div class="room-footer">
+                <div class="price">
+                    <span class="new">KSh 35,000</span>
+                    <small>/ night</small>
+                </div>
+                <div class="room-actions">
+                    <button onclick="openRoomModal('Presidential Suite', 35000, 'images/room6.jpg', 'Our finest suite — private terrace, jacuzzi, butler service, and panoramic views.')">View Details</button>
+                    <a href="room-presidential.html" class="btn-special"> Special Items</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 <!-- ===== IN-ROOM AMENITIES ===== -->
 <section class="amenities">
     <h2>Every Room Includes</h2>
